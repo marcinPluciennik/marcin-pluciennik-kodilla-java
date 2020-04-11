@@ -1,0 +1,6 @@
+[submodule "Kalkulator/src/main/java/com/kodilla"]
+	path = Kalkulator/src/main/java/com/kodilla
+	url = https://github.com/marcinPluciennik/marcin-pluciennik-kodilla-java.git
+[submodule "Test1/src/main/java/com/kodilla"]
+	path = Test1/src/main/java/com/kodilla
+	url = https://github.com/marcinPluciennik/marcin-pluciennik-kodilla-java.git
