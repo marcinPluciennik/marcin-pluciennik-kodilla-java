@@ -49,10 +49,10 @@ public class ShapeCollectorTestSuite {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape shape = new Circle(10.0);
-        shapeCollector.getFigures().add(shape);
+        shapeCollector.addFigure(shape);
         //When
         Shape retrievedShape;
-        retrievedShape = shapeCollector.getFigures().get(0);
+        retrievedShape = shapeCollector.getFigure(0);
         //Than
         Assert.assertEquals(shape, retrievedShape);
     }
