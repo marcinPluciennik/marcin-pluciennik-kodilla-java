@@ -15,9 +15,22 @@ public class ForumStatistics {
         commentQuantity = statistics.commentsCount();
         userQuantity = statistics.usersNames().size();
 
-        averageQuantityOfPostsPerUser = (double)postQuantity / userQuantity;
-        averageQuantityOfCommentsPerUser = (double)commentQuantity / userQuantity;
-        averageQuantityOfCommentsPerPost = (double)commentQuantity / postQuantity;
+        if (userQuantity != 0){
+            averageQuantityOfPostsPerUser = (double)postQuantity / userQuantity;
+            averageQuantityOfCommentsPerUser = (double)commentQuantity / userQuantity;
+        }else{
+            System.out.println("ERROR: DIVISION BY ZERO!");
+            averageQuantityOfPostsPerUser = 0.0;
+            averageQuantityOfCommentsPerUser = 0.0;
+        }
+
+        if (postQuantity != 0){
+            averageQuantityOfCommentsPerPost = (double)commentQuantity / postQuantity;
+        }else{
+            System.out.println("ERROR: DIVISION BY ZERO!");
+            averageQuantityOfCommentsPerPost = 0.0;
+        }
+
     }
 
     /*
