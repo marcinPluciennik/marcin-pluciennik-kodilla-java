@@ -12,7 +12,7 @@ public class StreamMain {
         Map<Integer, ForumUser> par = theForum.getUserList().stream()
                 .filter(user -> user.getUserSex() == 'M')
                 .filter(user -> user.getPostsQuantityPerUser() >= 1)
-                .filter(user -> user.getUserBirthDate().isBefore(LocalDate.of(2000,4,15)))
+                .filter(user -> user.getUserBirthDate().isBefore(LocalDate.now().minusYears(20)))
                 .collect(Collectors.toMap(ForumUser::getUserID, user -> user ));
 
         System.out.println("I found " + par.size() + " elements:");
