@@ -3,15 +3,35 @@ package com.kodilla.stream;
 
 import com.kodilla.stream.book.Book;
 import com.kodilla.stream.book.BookDirectory;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
 import com.kodilla.stream.person.People;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
+        Forum theForum = new Forum();
+        Map<Integer, ForumUser> par = theForum.getUserList().stream()
+                .filter(user -> user.getUserSex() == 'M')
+                .filter(user -> user.getPostsQuantityPerUser() >= 1)
+                .filter(user -> user.getUserBirthDate().isBefore(LocalDate.of(2000,4,15)))
+                .collect(Collectors.toMap(ForumUser::getUserID, user -> user ));
 
+        System.out.println("I found " + par.size() + " elements:");
+        System.out.println("------------------------------------");
+        par.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);
+
+
+
+
+        /*
         BookDirectory theBookDirectory = new BookDirectory();
         String theResultStringOfBooks = theBookDirectory.getList().stream()
                 .filter(book -> book.getYearOfPublication() > 2005)
@@ -19,6 +39,7 @@ public class StreamMain {
                 .collect(Collectors.joining(",\n","<<",">>"));
 
         System.out.println(theResultStringOfBooks);
+         */
 
         /*
         BookDirectory theBookDirectory = new BookDirectory();
