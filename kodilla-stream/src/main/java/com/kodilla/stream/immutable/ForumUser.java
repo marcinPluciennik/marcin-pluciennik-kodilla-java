@@ -1,5 +1,7 @@
 package com.kodilla.stream.immutable;
 
+import org.w3c.dom.ls.LSOutput;
+
 public final class ForumUser {
     private final String userName;
     private final String realName;
