@@ -1,10 +1,13 @@
 package com.kodilla.stream.portfolio;
 
+import jdk.vm.ci.meta.Local;
 import org.junit.Assert;
 import org.junit.Test;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -134,5 +137,35 @@ public class BoardTestSuite {
 
         //Then
         Assert.assertEquals(2, longTasks);
+    }
+
+    @Test
+    public void testAddTaskListAverageWorkingOnTask(){
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        List<Task> listInProgres = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .collect(Collectors.toList());
+
+        int today = LocalDate.now().getDayOfYear();
+        int sumDays = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(t -> t.getCreated())
+                .map(t -> t.getDayOfYear())
+                .map(t -> today - t)
+                .reduce(0, Integer::sum);
+
+        double averageDays = (double) sumDays / listInProgres.size();
+
+        //Than
+        Assert.assertEquals(3, listInProgres.size());
+        Assert.assertEquals(30, sumDays);
+        Assert.assertEquals(10.0, averageDays, 0.001);
     }
 }
