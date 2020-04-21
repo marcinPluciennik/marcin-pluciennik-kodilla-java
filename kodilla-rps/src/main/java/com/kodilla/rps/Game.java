@@ -86,6 +86,7 @@ public class Game {
                 }
             }else{
                 System.out.println("Error! Wrong key! Try again");
+                usersChoice();
             }
         }
 
