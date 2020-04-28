@@ -13,10 +13,11 @@ public class Game {
     private int userWinnerRounds = 0; //How many times user won
     private int computerWinnerRounds = 0; //How many times computer won
     private int tieCounter = 0;//How many times was a tie
-    private List<String> listOfPossibilities = new ArrayList<String>(); //From this list computer make random choice
+    private List<String> listOfPossibilities; //From this list computer make random choice
 
     //This method create new game
     public void startGame(){
+
         Intro intro = new Intro();
         intro.intro();
 
@@ -24,17 +25,27 @@ public class Game {
         user.startGame();
 
         intro.showRules();
+        intro.chooseLevel();
 
         Game game = new Game();
-        for (int i=0; i < user.getQuantityOfRounds(); i++) {
-            game.usersChoice();
-            String computersChoice = game.computerChoice();
-            game.whoIsTheWinnerOfRound();
-        }
 
+        if (intro.getUserLevelChoice().equals("B")){
+            for (int i=0; i < user.getQuantityOfRounds(); i++) {
+                game.usersChoice();
+                game.computerChoice();
+                game.whoIsTheWinnerOfRound();
+
+            }
+        }else if (intro.getUserLevelChoice().equals("E")){
+            for (int j=0; j < user.getQuantityOfRounds(); j++) {
+                game.usersChoice();
+                game.computerChoiceExpert();
+                game.whoIsTheWinnerOfRound();
+
+            }
+        }
         game.winner(user.getUserName());
         game.playAgain();
-
     }
 
     //This method create user's choice of play, quit game, restart game
@@ -70,7 +81,7 @@ public class Game {
                 }else if (quitOrPlay.equals("N")){
                     usersChoice();
                 }else{
-                    System.out.println("Wrong key, try again");
+                    System.out.println("Wrong key, try again!");
                 }
             }else if (userInput.equals("N")){
                 System.out.println("Are you sure to restart game? (y/n)");
@@ -82,21 +93,54 @@ public class Game {
                 }else if (askNewGame.equals("N")){
                     usersChoice();
                 }else{
-                    System.out.println("Wrong key, try again");
+                    System.out.println("Wrong key, try again!");
                 }
             }else{
-                System.out.println("Error! Wrong key! Try again");
+                System.out.println("Error! Wrong key! Try again!");
                 usersChoice();
             }
         }
 
     }
 
-    //This method create computer random choice from list: rock, paper or scissors
+    //This method create computer random choice from list: rock, paper or scissors in (Beginner level)
     public String computerChoice(){
-        listOfPossibilities.add("ROCK");
-        listOfPossibilities.add("PAPER");
-        listOfPossibilities.add("SCISSORS");
+        List<String> listOfPossibilitiesBeginner = new ArrayList<>();
+        listOfPossibilitiesBeginner.add("ROCK");
+        listOfPossibilitiesBeginner.add("PAPER");
+        listOfPossibilitiesBeginner.add("SCISSORS");
+        listOfPossibilities = listOfPossibilitiesBeginner;
+
+        Random random = new Random();
+        int numberOfIndexInListOfPossibilities = random.nextInt(listOfPossibilities.size());
+        computersChoice = listOfPossibilities.get(numberOfIndexInListOfPossibilities);
+        System.out.println("Computer's choice: " + computersChoice);
+        System.out.println("--------------------------------------------------");
+        roundsCounter++;
+        return computersChoice;
+    }
+
+    //This method create computer random choice from list: rock, paper or scissors (Expert(not fair) level)
+    public String computerChoiceExpert(){
+        List<String> listOfPossibilitiesBeginner = new ArrayList<>();
+        listOfPossibilitiesBeginner.add("ROCK");
+        listOfPossibilitiesBeginner.add("PAPER");
+        listOfPossibilitiesBeginner.add("SCISSORS");
+        listOfPossibilities = listOfPossibilitiesBeginner;
+
+        if (userInput.equals("1")){
+            listOfPossibilities.add("ROCK");
+            listOfPossibilities.add("PAPER");
+            listOfPossibilities.add("PAPER");
+        }else if (userInput.equals("2")){
+            listOfPossibilities.add("PAPER");
+            listOfPossibilities.add("SCISSORS");
+            listOfPossibilities.add("SCISSORS");
+        }else if (userInput.equals("3")){
+            listOfPossibilities.add("SCISSORS");
+            listOfPossibilities.add("ROCK");
+            listOfPossibilities.add("ROCK");
+        }
 
         Random random = new Random();
         int numberOfIndexInListOfPossibilities = random.nextInt(listOfPossibilities.size());
