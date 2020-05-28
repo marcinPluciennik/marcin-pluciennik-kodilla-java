@@ -1,3 +1,4 @@
+
 package com.kodilla.good.patterns.challenges;
 
 import java.util.stream.Collectors;
