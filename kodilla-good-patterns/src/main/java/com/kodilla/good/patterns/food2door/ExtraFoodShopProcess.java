@@ -1,8 +1,11 @@
 package com.kodilla.good.patterns.food2door;
 
 public class ExtraFoodShopProcess implements OrderProcess{
+    OrderResult orderResult = new OrderResult();
+    InputOrderExtraFoodShop inputOrderExtraFoodShop = new InputOrderExtraFoodShop();
+    OrderData orderData = inputOrderExtraFoodShop.inputOrder();
 
-    public OrderDto process(OrderResult orderResult, OrderData orderData){
+    public OrderDto process(){
         boolean isAccepted = orderResult.myOrderResult(orderData);
 
         if (isAccepted){

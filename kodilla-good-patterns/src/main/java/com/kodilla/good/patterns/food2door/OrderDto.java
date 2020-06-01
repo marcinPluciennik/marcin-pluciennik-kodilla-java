@@ -8,4 +8,12 @@ public class OrderDto {
         this.orderData = orderData;
         this.isAccepted = isAccepted;
     }
+
+    public OrderData getOrderData() {
+        return orderData;
+    }
+
+    public boolean isAccepted() {
+        return isAccepted;
+    }
 }
