@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.order;
 
-public class OrderProcessor {
+public class OrderProcessor implements OrderProcess{
 
     private InformationService informationService;
     private OrderService orderService;
