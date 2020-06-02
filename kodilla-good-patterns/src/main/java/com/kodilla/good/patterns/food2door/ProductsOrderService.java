@@ -4,13 +4,13 @@ public class ProductsOrderService {
 
     public static void main(String[] args){
 
-        OrderProcessorExtra orderProcessorExtra = new OrderProcessorExtra(new ExtraFoodShopProcess());
+        OrderProcessor orderProcessorExtra = new OrderProcessor(new ExtraFoodShopProcess());
         orderProcessorExtra.ordering();
 
-        OrderProcessorHealth orderProcessorHealth = new OrderProcessorHealth(new HealthyShopProcess());
+        OrderProcessor orderProcessorHealth = new OrderProcessor(new HealthyShopProcess());
         orderProcessorHealth.ordering();
 
-        OrderProcessorGluten orderProcessorGluten = new OrderProcessorGluten(new GlutenFreeShopProcess());
+        OrderProcessor orderProcessorGluten = new OrderProcessor(new GlutenFreeShopProcess());
         orderProcessorGluten.ordering();
     }
 }
