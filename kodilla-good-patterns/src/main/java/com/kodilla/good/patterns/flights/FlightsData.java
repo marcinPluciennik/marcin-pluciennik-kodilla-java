@@ -1,58 +1,36 @@
 package com.kodilla.good.patterns.flights;
 
-import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public class FlightsData {
-    /*
-    Map<String, ArrayList<LocalTime>> departuresGdansk = new HashMap<String, ArrayList<LocalTime>();
-    Map<String, ArrayList<LocalTime>> arrivalsGdansk = new HashMap<String, ArrayList<LocalTime>>();
 
-    public FlightsData(HashMap<String, ArrayList<LocalTime>> departuresGdansk, HashMap<String, ArrayList<LocalTime>> arrivalsGdansk) {
-        this.departuresGdansk = departuresGdansk;
-        this.arrivalsGdansk = arrivalsGdansk;
+    public List<Flight> getListOfFlights(){
+
+        Flight flight1 = new Flight("GDANSK", "WROCLAW", "10:00", false);
+        Flight flight2 = new Flight("WROCLAW", "CRACOW", "11:00", false);
+        Flight flight3 = new Flight("WARSAW", "WROCLAW", "12:00", false);
+        Flight flight4 = new Flight("GDANSK", "WARSAW", "13:00", false);
+        Flight flight5 = new Flight("CRACOW", "GDANSK", "14:00", false);
+        Flight flight6 = new Flight("GDANSK", "WROCLAW", "15:00", false);
+        Flight flight7 = new Flight("WROCLAW", "GDANSK", "16:00", true);
+        Flight flight8 = new Flight("GDANSK", "WROCLAW", "17:00", false);
+        Flight flight9 = new Flight("GDANSK", "WROCLAW", "18:00", true);
+        Flight flight10 = new Flight("WROCLAW", "GDANSK", "19:00", false);
+
+        List<Flight> listOfFlights = new ArrayList<Flight>();
+
+        listOfFlights.add(flight1);
+        listOfFlights.add(flight2);
+        listOfFlights.add(flight3);
+        listOfFlights.add(flight4);
+        listOfFlights.add(flight5);
+        listOfFlights.add(flight6);
+        listOfFlights.add(flight7);
+        listOfFlights.add(flight8);
+        listOfFlights.add(flight9);
+        listOfFlights.add(flight10);
+
+        return new ArrayList<Flight>(listOfFlights);
     }
-
-    public HashMap<String, ArrayList<LocalTime>> getDeparturesGdansk() {
-        return departuresGdansk;
-    }
-
-    public HashMap<String, ArrayList<LocalTime>> getArrivalsGdansk() {
-        return arrivalsGdansk;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        FlightsData that = (FlightsData) o;
-
-        if (departuresGdansk != null ? !departuresGdansk.equals(that.departuresGdansk) : that.departuresGdansk != null)
-            return false;
-        return arrivalsGdansk != null ? arrivalsGdansk.equals(that.arrivalsGdansk) : that.arrivalsGdansk == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = departuresGdansk != null ? departuresGdansk.hashCode() : 0;
-        result = 31 * result + (arrivalsGdansk != null ? arrivalsGdansk.hashCode() : 0);
-        return result;
-    }
-
-    public void searchFlightsFromGdansk(){
-
-    }
-
-    public void searchFlightsToGdansk(){
-
-    }
-
-    public void searchConnectedFlightsFromGdanskToWroclaw(){
-
-    }
-
-     */
 }
