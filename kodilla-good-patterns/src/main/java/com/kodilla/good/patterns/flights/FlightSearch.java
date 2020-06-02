@@ -8,8 +8,8 @@ public class FlightSearch {
 
         FlightSearchProcessor flightSearchProcessor = new FlightSearchProcessor();
 
-        flightSearchProcessor.searchingFlightsFromGdansk(flightsData);
-        flightSearchProcessor.searchingFlightsToGdansk(flightsData);
-        flightSearchProcessor.searchingConnectedFlightsFromGdanskToWroclaw(flightsData);
+        flightSearchProcessor.searchingFlightsFrom(flightsData, "GDANSK");
+        flightSearchProcessor.searchingFlightsTo(flightsData, "GDANSK");
+        flightSearchProcessor.searchingConnectedFlights(flightsData, "GDANSK", "WROCLAW");
     }
 }
