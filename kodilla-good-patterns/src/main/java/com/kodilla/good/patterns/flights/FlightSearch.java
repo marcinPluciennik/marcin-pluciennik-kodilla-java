@@ -10,6 +10,6 @@ public class FlightSearch {
 
         flightSearchProcessor.searchingFlightsFrom(flightsData, "GDANSK");
         flightSearchProcessor.searchingFlightsTo(flightsData, "GDANSK");
-        flightSearchProcessor.searchingConnectedFlights(flightsData, "GDANSK", "WROCLAW");
+        flightSearchProcessor.searchingConnectedFlights(flightsData, "GDANSK", "CRACOW");
     }
 }

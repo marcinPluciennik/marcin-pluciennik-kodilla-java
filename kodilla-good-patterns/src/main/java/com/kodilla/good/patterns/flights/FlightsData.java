@@ -7,16 +7,16 @@ public class FlightsData {
 
     public List<Flight> getListOfFlights(){
 
-        Flight flight1 = new Flight("GDANSK", "WROCLAW", "10:00", false);
-        Flight flight2 = new Flight("WROCLAW", "CRACOW", "11:00", false);
-        Flight flight3 = new Flight("WARSAW", "WROCLAW", "12:00", false);
-        Flight flight4 = new Flight("GDANSK", "WARSAW", "13:00", false);
-        Flight flight5 = new Flight("CRACOW", "GDANSK", "14:00", false);
-        Flight flight6 = new Flight("GDANSK", "WROCLAW", "15:00", false);
-        Flight flight7 = new Flight("WROCLAW", "GDANSK", "16:00", true);
-        Flight flight8 = new Flight("GDANSK", "WROCLAW", "17:00", false);
-        Flight flight9 = new Flight("GDANSK", "WROCLAW", "18:00", true);
-        Flight flight10 = new Flight("WROCLAW", "GDANSK", "19:00", false);
+        Flight flight1 = new Flight("GDANSK", "WROCLAW", "10:00");
+        Flight flight2 = new Flight("WROCLAW", "CRACOW", "11:00");
+        Flight flight3 = new Flight("WARSAW", "WROCLAW", "12:00");
+        Flight flight4 = new Flight("GDANSK", "WARSAW", "13:00");
+        Flight flight5 = new Flight("CRACOW", "GDANSK", "14:00");
+        Flight flight6 = new Flight("GDANSK", "WROCLAW", "15:00");
+        Flight flight7 = new Flight("WROCLAW", "GDANSK", "16:00");
+        Flight flight8 = new Flight("GDANSK", "WROCLAW", "17:00");
+        Flight flight9 = new Flight("GDANSK", "WROCLAW", "18:00");
+        Flight flight10 = new Flight("WROCLAW", "GDANSK", "19:00");
 
         List<Flight> listOfFlights = new ArrayList<Flight>();
 
