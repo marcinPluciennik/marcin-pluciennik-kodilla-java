@@ -14,9 +14,17 @@ public class LibraryTestSuite {
         //Given
         Library library = new Library("My Library");
 
-        IntStream.iterate(1, n -> n +1)
-                .limit(5)
-                .forEach(n -> library.getBooks().add(new Book("Title " + n, "Author " + n, LocalDate.now().minusDays(n*10))));
+        Book book1 = new Book("Title 1", "Author 1", LocalDate.now().minusDays(10));
+        Book book2 = new Book ("Title 2", "Author 2", LocalDate.now().minusDays(20));
+        Book book3 = new Book ("Title 3", "Author 3", LocalDate.now().minusDays(30));
+        Book book4 = new Book ("Title 4", "Author 4", LocalDate.now().minusDays(40));
+        Book book5 = new Book ("Title 5", "Author 5", LocalDate.now().minusDays(50));
+
+        library.getBooks().add(book1);
+        library.getBooks().add(book2);
+        library.getBooks().add(book3);
+        library.getBooks().add(book4);
+        library.getBooks().add(book5);
 
         Library cloneLibrary = null;
         try {
@@ -34,6 +42,8 @@ public class LibraryTestSuite {
             System.out.println(e);
         }
 
+        library.getBooks().remove(book1);
+
         System.out.println(library.getName());
         System.out.println(library.getBooks());
         System.out.println();
@@ -45,8 +55,8 @@ public class LibraryTestSuite {
 
         //When
         //Than
-        Assert.assertEquals(5, library.getBooks().size());
-        Assert.assertEquals(5, cloneLibrary.getBooks().size());
+        Assert.assertEquals(4, library.getBooks().size());
+        Assert.assertEquals(4, cloneLibrary.getBooks().size());
         Assert.assertEquals(5,deepCloneLibrary.getBooks().size());
     }
 }
