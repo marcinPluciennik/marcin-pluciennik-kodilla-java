@@ -1,5 +1,5 @@
 package com.kodilla.hibernate.invoice;
-/*
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class Invoice {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "INVOICE_ID")
+    @Column(name = "ID")
     public int getId() {
         return id;
     }
@@ -42,6 +42,17 @@ public class Invoice {
     public List<Item> getItems() {
         return items;
     }
-}
 
- */
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    private void setItems(List<Item> items) {
+        this.items = items;
+    }
+}

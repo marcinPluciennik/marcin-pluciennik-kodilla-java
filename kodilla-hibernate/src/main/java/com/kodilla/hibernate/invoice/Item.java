@@ -1,5 +1,5 @@
 package com.kodilla.hibernate.invoice;
-/*
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
@@ -27,16 +27,15 @@ public class Item {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "ITEM_ID")
+    @Column(name = "ID")
     public int getId() {
         return id;
     }
 
-
     @NotNull
     @Column(name = "PRODUCT")
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "PRODUCTS_ID")
+    @ManyToOne
+    @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
         return product;
     }
@@ -80,7 +79,7 @@ public class Item {
     }
 
     @ManyToOne
-    @JoinColumn(name = "INVOICES_ID")
+    @JoinColumn(name = "INVOICE_ID")
     public Invoice getInvoice() {
         return invoice;
     }
@@ -89,7 +88,5 @@ public class Item {
         this.invoice = invoice;
     }
 }
-
- */
 
 
