@@ -32,8 +32,6 @@ public class Item {
         return id;
     }
 
-    @NotNull
-    @Column(name = "PRODUCT")
     @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
@@ -88,5 +86,6 @@ public class Item {
         this.invoice = invoice;
     }
 }
+
 
 

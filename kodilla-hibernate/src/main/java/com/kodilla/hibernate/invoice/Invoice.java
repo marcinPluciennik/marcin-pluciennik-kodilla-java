@@ -10,7 +10,7 @@ import java.util.List;
 public class Invoice {
     private int id;
     private String number;
-    private List<Item> items = new ArrayList<>();
+    private List<Item> itemsFromInvoice = new ArrayList<>();
 
     public Invoice() {
     }
@@ -28,7 +28,7 @@ public class Invoice {
     }
 
     @NotNull
-    @Column(name = "INVOICE_NAME")
+    @Column(name = "INVOICE_NUMBER")
     public String getNumber() {
         return number;
     }
@@ -39,20 +39,20 @@ public class Invoice {
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    public List<Item> getItems() {
-        return items;
+    public List<Item> getItemsFromInvoice() {
+        return itemsFromInvoice;
     }
 
 
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
-    public void setNumber(String number) {
+    private void setNumber(String number) {
         this.number = number;
     }
 
-    private void setItems(List<Item> items) {
-        this.items = items;
+    public void setItemsFromInvoice(List<Item> itemsFromInvoice) {
+        this.itemsFromInvoice = itemsFromInvoice;
     }
 }

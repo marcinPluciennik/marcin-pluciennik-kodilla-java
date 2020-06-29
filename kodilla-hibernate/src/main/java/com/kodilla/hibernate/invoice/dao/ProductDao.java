@@ -9,3 +9,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface ProductDao extends CrudRepository<Product, Integer> {
 }
+
+

@@ -5,6 +5,13 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.retrieveCompanyWithNameIncludedWord",
+        query = "SELECT name FROM COMPANIES" +
+                " WHERE name LIKE ':NAME%'",
+        resultClass = Employee.class
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

@@ -34,3 +34,4 @@ public class TaskFinancialDetailsDaoTestSuite {
         taskFinancialDetailsDao.deleteById(id);
     }
 }
+
