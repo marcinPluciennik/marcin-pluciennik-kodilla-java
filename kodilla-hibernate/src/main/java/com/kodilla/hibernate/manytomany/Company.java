@@ -7,9 +7,8 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveCompanyWithNameIncludedWord",
-        query = "SELECT name FROM COMPANIES" +
-                " WHERE name LIKE ':NAME%'",
-        resultClass = Employee.class
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT(:NAME, '%')",
+        resultClass = Company.class
 )
 
 @Entity
