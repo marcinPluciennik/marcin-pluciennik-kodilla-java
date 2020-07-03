@@ -82,7 +82,6 @@ public class UserInput {
         }
     }
 
-
     public int getX () {
         return x;
     }
