@@ -9,101 +9,98 @@ public class UserInput {
 
     public int loadUserInputX() {
         Scanner s = new Scanner(System.in);
-        System.out.print("Enter X (1-10):");
-        if (s.hasNextInt()) {
-            int inputX = s.nextInt();
-            if (inputX < 1 || inputX > 10) {
-                System.out.println("X must be 1-10! Try again");
-                loadUserInputX();
-            } else {
-                x = inputX;
-            }
-        } else {
-            String inputString = s.nextLine().toUpperCase();
+
+        while (true) {
+            System.out.print("Enter X (1-10):");
+            String inputString = s.nextLine();
+
             if (inputString.equals(SUDOKU)){
                 gameOver = inputString;
             }else{
-                System.out.println("It's not a number! Try again");
-                loadUserInputX();
+                try {
+                    int inputX = Integer.parseInt(inputString);
+                    if (inputX < 1 || inputX > 10) {
+                        System.out.println("X must be 1-10! Try again");
+                    } else {
+                        x = inputX;
+                        return x;
+                    }
+                } catch (Exception e) {
+                    System.out.println("It's not a number! Try again");
+                }
             }
         }
+    }
+
+    public int loadUserInputY () {
+        Scanner s = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Enter Y (1-10):");
+            String inputString = s.nextLine();
+
+            if (inputString.equals(SUDOKU)){
+                gameOver = inputString;
+            }else{
+                try {
+                    int inputY = Integer.parseInt(inputString);
+                    if (inputY < 1 || inputY > 10) {
+                        System.out.println("Y must be 1-10! Try again");
+                    } else {
+                        y = inputY;
+                        return y;
+                    }
+                } catch (Exception e) {
+                    System.out.println("It's not a number! Try again");
+                }
+            }
+        }
+    }
+
+    public int loadUserInputValue () {
+        Scanner s = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Enter value (1-9):");
+            String inputString = s.nextLine();
+
+            if (inputString.equals(SUDOKU)) {
+                gameOver = inputString;
+            } else {
+                try {
+                    int valueInput = Integer.parseInt(inputString);
+                    if (valueInput < 1 || valueInput > 9) {
+                        System.out.println("Value must be 1-9! Try again");
+                    } else {
+                        value = valueInput;
+                        return valueInput;
+                    }
+                } catch (Exception e) {
+                    System.out.println("It's not a number! Try again");
+                }
+            }
+        }
+    }
+
+
+    public int getX () {
         return x;
     }
 
-    public int loadUserInputY() {
-        Scanner s = new Scanner(System.in);
-        System.out.print("Enter y (1-10):");
-        if (s.hasNextInt()) {
-            int inputY = s.nextInt();
-            if (inputY < 1 || inputY > 10) {
-                System.out.println("Y must be 1-10! Try again");
-                loadUserInputY();
-            } else {
-                y = inputY;
-            }
-        } else {
-            String inputString = s.nextLine().toUpperCase();
-            if (inputString.equals(SUDOKU)){
-                gameOver = inputString;
-            }else{
-                System.out.println("It's not a number! Try again");
-                loadUserInputY();
-            }
-        }
+    public int getY () {
         return y;
     }
 
-    public int loadUserInputValue() {
-        Scanner s = new Scanner(System.in);
-        System.out.print("Enter value (0-9):");
-        if (s.hasNextInt()) {
-            int valueInput = s.nextInt();
-            if (valueInput < 1 || valueInput > 10) {
-                System.out.println("Value must be 0-9! Try again");
-                loadUserInputValue();
-            } else {
-                value = valueInput;
-            }
-        } else {
-            String inputString = s.nextLine().toUpperCase();
-            if (inputString.equals(SUDOKU)){
-                gameOver = inputString;
-            }else{
-                System.out.println("It's not a number! Try again");
-                loadUserInputX();
-            }
-        }
+    public int getValue () {
         return value;
     }
 
-    public void newGameAfterSudoku(){
-        if (gameOver.equals(SUDOKU)){
-            Scanner s = new Scanner(System.in);
-            System.out.println("Press ENTER twice to play again or any key + ENTER to quit game");
-            String newGameOrNot = s.nextLine();
-            if (newGameOrNot.equals("")){
-                System.out.println("NEW GAME");
-            }else{
-                System.exit(0);
-            }
-        }
-    }
-
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public String getGameOver() {
+    public String getGameOver () {
         return gameOver;
     }
 
+    public String getSUDOKU () {
+        return SUDOKU;
+    }
 }
+

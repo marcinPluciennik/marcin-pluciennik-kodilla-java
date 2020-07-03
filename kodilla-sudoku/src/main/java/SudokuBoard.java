@@ -21,7 +21,6 @@ public class SudokuBoard {
         SudokuRow sudokuRow6 = new SudokuRow();
         SudokuRow sudokuRow7 = new SudokuRow();
         SudokuRow sudokuRow8 = new SudokuRow();
-        SudokuRow sudokuRow9 = new SudokuRow();
 
         rowBoard.add(sudokuRow0);
         rowBoard.add(sudokuRow1);
@@ -33,7 +32,6 @@ public class SudokuBoard {
         rowBoard.add(sudokuRow6);
         rowBoard.add(sudokuRow7);
         rowBoard.add(sudokuRow8);
-        rowBoard.add(sudokuRow9);
     }
 
     public List<SudokuRow> getRowBoard() {
@@ -43,6 +41,27 @@ public class SudokuBoard {
     public static int getMinIndex() {
         return MIN_INDEX;
     }
+
+    public String toString(){
+
+        String result = "";
+        for(int n = MIN_INDEX; n <= MAX_INDEX; n++) {
+            result += "|";
+            for(int k = MIN_INDEX; k <= MAX_INDEX; k++) {
+                if(rowBoard.get(n).getRow().get(k).getValue() == -1 ) {
+                    result += "_";
+                } else {
+                    result += rowBoard.get(n).getRow().get(k).getValue();
+                }
+                result += "|";
+            }
+            result += "\n";
+        }
+        return result;
+
+    }
+
+    /*
 
     public String toString() {
         String result = "";
@@ -60,5 +79,7 @@ public class SudokuBoard {
         }
         return result;
     }
+
+     */
 }
 
