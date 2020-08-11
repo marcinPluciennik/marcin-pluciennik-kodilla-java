@@ -12,7 +12,6 @@ public class SudokuGame {
 
             SudokuElement sudokuElement = new SudokuElement(userInput.getValue());
             sudokuBoard.rowBoard.get(userInput.getX() - 1).getRow().set((userInput.getY() - 1), sudokuElement);
-
             System.out.println(sudokuBoard.toString());
         }
     }
