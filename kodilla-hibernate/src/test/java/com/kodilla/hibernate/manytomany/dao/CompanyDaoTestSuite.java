@@ -118,4 +118,5 @@ public class CompanyDaoTestSuite {
         companyDao.deleteById(dataMaestersId);
         companyDao.deleteById(greyMatterId);
     }
+
 }

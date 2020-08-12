@@ -5,11 +5,20 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(
-        name = "Company.retrieveCompanyWithNameIncludedWord",
-        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT(:NAME, '%')",
-        resultClass = Company.class
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.retrieveCompanyWithNameIncludedWord",
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT(:NAME, '%')",
+                resultClass = Company.class
+        ),
+
+        @NamedNativeQuery(
+                name = "Company.retrieveCompanyByString",
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%',:NAME, '%')",
+                resultClass = Company.class
+        )
+})
+
 
 @Entity
 @Table(name = "COMPANIES")
