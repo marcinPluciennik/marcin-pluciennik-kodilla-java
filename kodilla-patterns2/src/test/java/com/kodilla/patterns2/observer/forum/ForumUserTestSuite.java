@@ -29,6 +29,7 @@ public class ForumUserTestSuite {
         //Than
         assertEquals(3, johnSmith.getUpdateCount());
         assertEquals(2, ivoneEscobar.getUpdateCount());
-        assertEquals(5, jessiePinkman.getUpdateCount());
+        assertEquals(5, jessiePinkman.getUpdateCount()
+        );
     }
 }
