@@ -10,8 +10,10 @@ public class SudokuGame {
             userInput.loadUserInputY();
             userInput.loadUserInputValue();
 
-            SudokuElement sudokuElement = new SudokuElement(userInput.getValue());
+            SudokuElement sudokuElement = new SudokuElement();
+            sudokuElement.setValue(userInput.getValue());
             sudokuBoard.rowBoard.get(userInput.getX() - 1).getRow().set((userInput.getY() - 1), sudokuElement);
+            System.out.println("\n====== SUDOKU =====");
             System.out.println(sudokuBoard.toString());
         }
     }
