@@ -28,4 +28,8 @@ public class SudokuElement {
     public int hashCode() {
         return value;
     }
+
+    public void setPossibilities(int[] possibilities) {
+        this.possibilities = possibilities;
+    }
 }

@@ -10,12 +10,15 @@ public class UserInput {
     public int loadUserInputX() {
         Scanner s = new Scanner(System.in);
 
+
         while (true) {
             System.out.print("Enter X (1-9):");
             String inputString = s.nextLine();
 
             if (inputString.equals(SUDOKU)){
-                gameOver = inputString;
+                gameOver = "SUDOKU";
+                x = 0;
+                return x;
             }else{
                 try {
                     int inputX = Integer.parseInt(inputString);
@@ -40,7 +43,9 @@ public class UserInput {
             String inputString = s.nextLine();
 
             if (inputString.equals(SUDOKU)){
-                gameOver = inputString;
+                gameOver = SUDOKU;
+                y = 0;
+                return y;
             }else{
                 try {
                     int inputY = Integer.parseInt(inputString);
@@ -65,7 +70,9 @@ public class UserInput {
             String inputString = s.nextLine();
 
             if (inputString.equals(SUDOKU)) {
-                gameOver = inputString;
+                gameOver = SUDOKU;
+                value = 0;
+                return value;
             } else {
                 try {
                     int valueInput = Integer.parseInt(inputString);
@@ -97,9 +104,12 @@ public class UserInput {
     public String getGameOver () {
         return gameOver;
     }
-
     public String getSUDOKU () {
         return SUDOKU;
+    }
+
+    public void setGameOver(String gameOver) {
+        this.gameOver = gameOver;
     }
 }
 
