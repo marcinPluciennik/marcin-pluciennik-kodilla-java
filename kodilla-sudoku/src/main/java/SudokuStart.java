@@ -11,7 +11,7 @@ public class SudokuStart {
             theGame.game();
             gameFinished = theGame.resolveSudoku();
         }
-        //theGame.solvingTheGame();
+        theGame.solvingTheGame();
         theGame.newGameAfterSudoku();
     }
 }

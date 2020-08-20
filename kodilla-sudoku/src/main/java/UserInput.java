@@ -13,7 +13,7 @@ public class UserInput {
 
         while (true) {
             System.out.print("Enter X (1-9):");
-            String inputString = s.nextLine();
+            String inputString = s.nextLine().toUpperCase();
 
             if (inputString.equals(SUDOKU)){
                 gameOver = "SUDOKU";
@@ -40,7 +40,7 @@ public class UserInput {
 
         while (true) {
             System.out.print("Enter Y (1-9):");
-            String inputString = s.nextLine();
+            String inputString = s.nextLine().toUpperCase();
 
             if (inputString.equals(SUDOKU)){
                 gameOver = SUDOKU;
@@ -67,7 +67,7 @@ public class UserInput {
 
         while (true) {
             System.out.print("Enter value (1-9):");
-            String inputString = s.nextLine();
+            String inputString = s.nextLine().toUpperCase();
 
             if (inputString.equals(SUDOKU)) {
                 gameOver = SUDOKU;
@@ -108,8 +108,5 @@ public class UserInput {
         return SUDOKU;
     }
 
-    public void setGameOver(String gameOver) {
-        this.gameOver = gameOver;
-    }
 }
 

@@ -215,7 +215,7 @@ public class SudokuGame {
     }
 
     public void solvingTheGame(){
-        int counterInColumn = 0;
+        System.out.println("Im solving the game!");
         for (int i = 0; i < 9; i++){
             for (int j = 0; j < 9; j++){
                 if (sudokuBoard.getRowBoard().get(i).getRow().get(j).getValue() == -1){
