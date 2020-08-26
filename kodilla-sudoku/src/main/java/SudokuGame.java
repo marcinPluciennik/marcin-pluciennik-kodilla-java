@@ -214,32 +214,55 @@ public class SudokuGame {
         }
     }
 
+
     public void solvingTheGame(){
-        System.out.println("Im solving the game!");
         for (int i = 0; i < 9; i++){
+            List<Integer> listOfNumbersRow = new ArrayList<>();
+
             for (int j = 0; j < 9; j++){
-                if (sudokuBoard.getRowBoard().get(i).getRow().get(j).getValue() == -1){
+                if (sudokuBoard.getRowBoard().get(i).getRow().get(j).getValue() != -1){
+                    listOfNumbersRow.add(sudokuBoard.getRowBoard().get(i).getRow().get(j).getValue());
+                    System.out.println("lista wpisanych numerow w wierszu: " + listOfNumbersRow.toString());
+                }else{
+                    System.out.println("Linia " + i + ": " + "pozycja " + j);
+
+                    List<Integer> list = new ArrayList<>(sudokuBoard.getRowBoard().get(i).getRow().get(j).
+                            getPossibilities().length);
+                    for (int element: sudokuBoard.getRowBoard().get(i).getRow().get(j).
+                            getPossibilities()){
+                        list.add(element);
+                    }
+
+
                     for (int k = 0; k < sudokuBoard.getRowBoard().get(i).getRow().get(j).getPossibilities().length; k++){
                         int number = sudokuBoard.getRowBoard().get(i).getRow().get(j).getPossibilities()[k];
-                        if (sudokuBoard.getRowBoard().get(i).getRow().get(j).getValue() == number){
-                            int index = Arrays.asList(sudokuBoard.getRowBoard().get(i).getRow().get(j).
-                                    getPossibilities()).indexOf(number);
-                            int[] newPossibilities = Arrays.copyOf(sudokuBoard.getRowBoard().get(i).getRow().get(j).
-                                    getPossibilities(), index);
-                            sudokuBoard.getRowBoard().get(i).getRow().get(j).setPossibilities(newPossibilities);
-                        } else if (sudokuBoard.getRowBoard().get(i).getRow().get(j).getPossibilities().length == 1) {
-                            sudokuBoard.getRowBoard().get(i).getRow().get(j).setValue(number);
-                        }
+                        System.out.println("Sprawdzam dla kazdej wartosci " + number);
 
-                        /*
-                        int counter = 0;
-                        for (int n = 0; n < 9; n++){
-                            if (sudokuBoard.getRowBoard().get(i).getRow().get(j).getValue() == number){
-                                counter++;
-                            }
-                        }
 
-                         */
+                        boolean ifContains = listOfNumbersRow.contains(number);
+                        int index = Arrays.binarySearch(sudokuBoard.getRowBoard().get(i).getRow().get(j).
+                                getPossibilities(), number);
+                        if (ifContains){
+                            System.out.println("znalazalem");
+
+                            System.out.println("Index to: " + index);
+
+                            System.out.println("Usuwam to");
+                            list.removeIf(t -> t.equals(number));
+
+                            System.out.println("Tablica: " +
+                                    list.toString());
+                        }
+                    }
+
+                    int[] newPossibilities = new int[list.size()];
+                    for(int ii = 0; ii < list.size(); ii++) newPossibilities[ii] = list.get(ii);
+                    sudokuBoard.getRowBoard().get(i).getRow().get(j).setPossibilities(newPossibilities);
+                    System.out.println("New possibilities: " +
+                            Arrays.toString(sudokuBoard.getRowBoard().get(i).getRow().get(j).getPossibilities()));
+
+                    if (newPossibilities.length == 1){
+                        sudokuBoard.getRowBoard().get(i).getRow().get(j).setValue(newPossibilities[0]);
                     }
                 }
             }
@@ -261,7 +284,7 @@ public class SudokuGame {
     public void newGameAfterSudoku() {
         if (userInput.getGameOver().equals(userInput.getSUDOKU())) {
             Scanner s = new Scanner(System.in);
-            System.out.println("Press ENTER to play again or ANY KEY + ENTER to quit game");
+            System.out.println("Press ENTER to play again or ANY KEY + ENTER to quit the game");
             String newGameOrNot = s.nextLine();
             if (newGameOrNot.isEmpty()) {
                 //userInput.setGameOver("");
