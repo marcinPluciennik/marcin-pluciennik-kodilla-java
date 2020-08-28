@@ -274,17 +274,66 @@ public class SudokuGame {
 
         //checking boxes
         List<Integer> box0 = numbersInBox3x3(0,2,0,2);
+        makeNewListOfNumbersInBox3x3(box0, 0, 3, 0, 3);
+
         List<Integer> box1 = numbersInBox3x3(3,5,0,2);
+        makeNewListOfNumbersInBox3x3(box1, 3,6,0,3);
+
         List<Integer> box2 = numbersInBox3x3(6,8,0,2);
+        makeNewListOfNumbersInBox3x3(box2,6,9,0,3);
+
         List<Integer> box3 = numbersInBox3x3(0,2,3,5);
+        makeNewListOfNumbersInBox3x3(box3,0,3,3,6);
+
         List<Integer> box4 = numbersInBox3x3(0,2,6,8);
+        makeNewListOfNumbersInBox3x3(box4,0,3,6,9);
+
         List<Integer> box5 = numbersInBox3x3(3,5,3,5);
+        makeNewListOfNumbersInBox3x3(box5,3,6,3,6);
+
         List<Integer> box6 = numbersInBox3x3(6,8,3,5);
+        makeNewListOfNumbersInBox3x3(box6,6,9,3,6);
+
         List<Integer> box7 = numbersInBox3x3(3,5,6,8);
+        makeNewListOfNumbersInBox3x3(box7,3,6,6,9);
+
         List<Integer> box8 = numbersInBox3x3(6,8,6,8);
+        makeNewListOfNumbersInBox3x3(box8,6,9,6,9);
 
         System.out.println("\n====== SUDOKU =====");
         System.out.println(sudokuBoard.toString());
+    }
+
+    public void makeNewListOfNumbersInBox3x3(List<Integer> listWithNumbresInBox, int x1, int x3, int y1, int y3){
+        for (int i = x1; i < x3; i++){
+            for (int j = y1; j < y3; j++){
+                if (sudokuBoard.getRowBoard().get(i).getRow().get(j).getValue() == -1){
+                    System.out.println("--------------Sprawdzam box");
+
+                    List<Integer> list = new ArrayList<>(sudokuBoard.getRowBoard().get(i).getRow().get(j).
+                            getPossibilities().length);
+                    for (int element: sudokuBoard.getRowBoard().get(i).getRow().get(j).
+                            getPossibilities()){
+                        list.add(element);
+                    }
+
+                    for (int k = 0; k < sudokuBoard.getRowBoard().get(i).getRow().get(j).getPossibilities().length; k++){
+                        int number = sudokuBoard.getRowBoard().get(i).getRow().get(j).getPossibilities()[k];
+
+                        boolean ifContains = listWithNumbresInBox.contains(number);
+                        if (ifContains){
+                            list.removeIf(t -> t.equals(number));
+                        }
+                    }
+
+                    int[] newPossibilities = new int[list.size()];
+                    for(int ii = 0; ii < list.size(); ii++) newPossibilities[ii] = list.get(ii);
+                    sudokuBoard.getRowBoard().get(i).getRow().get(j).setPossibilities(newPossibilities);
+                    System.out.println("New possibilities w tem boxie: " +
+                            Arrays.toString(sudokuBoard.getRowBoard().get(i).getRow().get(j).getPossibilities()));
+                }
+            }
+        }
     }
 
 
@@ -305,8 +354,6 @@ public class SudokuGame {
                     int number = sudokuBoard.getRowBoard().get(i).getRow().get(numberOfColumn).getPossibilities()[k];
 
                     boolean ifContains = listWithNumbersInBoard.contains(number);
-                    int index = Arrays.binarySearch(sudokuBoard.getRowBoard().get(i).getRow().get(numberOfColumn).
-                            getPossibilities(), number);
                     if (ifContains){
                         list.removeIf(t -> t.equals(number));
                     }
@@ -315,9 +362,8 @@ public class SudokuGame {
                 int[] newPossibilities = new int[list.size()];
                 for(int ii = 0; ii < list.size(); ii++) newPossibilities[ii] = list.get(ii);
                 sudokuBoard.getRowBoard().get(i).getRow().get(numberOfColumn).setPossibilities(newPossibilities);
-                System.out.println("New possibilities w kolumnie: " +
+                System.out.println("New possibilities w tej kolumnie: " +
                         Arrays.toString(sudokuBoard.getRowBoard().get(i).getRow().get(numberOfColumn).getPossibilities()));
-
             }
         }
     }
@@ -327,7 +373,7 @@ public class SudokuGame {
     public void makeNewListOfNumbersInRow(List<Integer> listWithNumbersInBoard, int numberOfRow){
         for (int j = 0; j < 9; j++){
             if (sudokuBoard.getRowBoard().get(numberOfRow).getRow().get(j).getValue() == -1) {
-                System.out.println("------------------Element w rzedzie nr :" + j);
+                System.out.println("------------------Element w tym rzedzie nr :" + j);
 
                 List<Integer> list = new ArrayList<>(sudokuBoard.getRowBoard().get(numberOfRow).getRow().get(j).
                         getPossibilities().length);
@@ -340,8 +386,6 @@ public class SudokuGame {
                     int number = sudokuBoard.getRowBoard().get(numberOfRow).getRow().get(j).getPossibilities()[k];
 
                     boolean ifContains = listWithNumbersInBoard.contains(number);
-                    int index = Arrays.binarySearch(sudokuBoard.getRowBoard().get(numberOfRow).getRow().get(j).
-                            getPossibilities(), number);
                     if (ifContains) {
                         list.removeIf(t -> t.equals(number));
                     }
@@ -350,10 +394,10 @@ public class SudokuGame {
                 int[] newPossibilities = new int[list.size()];
                 for (int ii = 0; ii < list.size(); ii++) newPossibilities[ii] = list.get(ii);
                 sudokuBoard.getRowBoard().get(numberOfRow).getRow().get(j).setPossibilities(newPossibilities);
-                System.out.println("New possibilities w rzędzie: " +
+                System.out.println("New possibilities w tym rzędzie: " +
                         Arrays.toString(sudokuBoard.getRowBoard().get(numberOfRow).getRow().get(j).getPossibilities()));
             }
-            }
+        }
     }
 
 
