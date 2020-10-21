@@ -3,6 +3,7 @@ package com.kodilla.testing.forum.statistics;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 import java.util.*;
 
 import static org.mockito.Mockito.mock;
@@ -18,7 +19,7 @@ public class ForumStatisticsTestSuite {
     }
 
     @Test
-    public void testCalculateAdvStatisticsWithMock1(){
+    public void testCalculateAdvStatisticsWithMock1() {
         //Given
         ForumStatistics forumStatistics = new ForumStatistics();
         Statistics statisticsMock = mock(Statistics.class);
@@ -30,7 +31,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.postsCount()).thenReturn(postsCountStatistic);
 
         List<String> userNamesStatistics = new ArrayList<String>();
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             userNamesStatistics.add("A");
         }
         when(statisticsMock.usersNames()).thenReturn(userNamesStatistics);
@@ -51,7 +52,7 @@ public class ForumStatisticsTestSuite {
     }
 
     @Test
-    public void testCalculateAdvStatisticsWithMock2(){
+    public void testCalculateAdvStatisticsWithMock2() {
         //Given
         ForumStatistics forumStatistics = new ForumStatistics();
         Statistics statisticsMock = mock(Statistics.class);
@@ -63,7 +64,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.postsCount()).thenReturn(postsCountStatistic);
 
         List<String> userNamesStatistics = new ArrayList<String>();
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             userNamesStatistics.add("A");
         }
         when(statisticsMock.usersNames()).thenReturn(userNamesStatistics);
@@ -84,7 +85,7 @@ public class ForumStatisticsTestSuite {
     }
 
     @Test
-    public void testCalculateAdvStatisticsWithMock3(){
+    public void testCalculateAdvStatisticsWithMock3() {
         //Given
         ForumStatistics forumStatistics = new ForumStatistics();
         Statistics statisticsMock = mock(Statistics.class);
@@ -96,7 +97,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.postsCount()).thenReturn(postsCountStatistic);
 
         List<String> userNamesStatistics = new ArrayList<String>();
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             userNamesStatistics.add("A");
         }
         when(statisticsMock.usersNames()).thenReturn(userNamesStatistics);
@@ -117,7 +118,7 @@ public class ForumStatisticsTestSuite {
     }
 
     @Test
-    public void testCalculateAdvStatisticsWithMock4(){
+    public void testCalculateAdvStatisticsWithMock4() {
         //Given
         ForumStatistics forumStatistics = new ForumStatistics();
         Statistics statisticsMock = mock(Statistics.class);
@@ -129,7 +130,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.postsCount()).thenReturn(postsCountStatistic);
 
         List<String> userNamesStatistics = new ArrayList<String>();
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             userNamesStatistics.add("A");
         }
         when(statisticsMock.usersNames()).thenReturn(userNamesStatistics);
@@ -150,7 +151,7 @@ public class ForumStatisticsTestSuite {
     }
 
     @Test
-    public void testCalculateAdvStatisticsWithMock5(){
+    public void testCalculateAdvStatisticsWithMock5() {
         //Given
         ForumStatistics forumStatistics = new ForumStatistics();
         Statistics statisticsMock = mock(Statistics.class);
@@ -162,7 +163,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.postsCount()).thenReturn(postsCountStatistic);
 
         List<String> userNamesStatistics = new ArrayList<String>();
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             userNamesStatistics.add("A");
         }
         when(statisticsMock.usersNames()).thenReturn(userNamesStatistics);
@@ -183,7 +184,7 @@ public class ForumStatisticsTestSuite {
     }
 
     @Test
-    public void testCalculateAdvStatisticsWithMock6(){
+    public void testCalculateAdvStatisticsWithMock6() {
         //Given
         ForumStatistics forumStatistics = new ForumStatistics();
         Statistics statisticsMock = mock(Statistics.class);
@@ -216,7 +217,7 @@ public class ForumStatisticsTestSuite {
     }
 
     @Test
-    public void testCalculateAdvStatisticsWithMock7(){
+    public void testCalculateAdvStatisticsWithMock7() {
         //Given
         ForumStatistics forumStatistics = new ForumStatistics();
         Statistics statisticsMock = mock(Statistics.class);
@@ -228,7 +229,7 @@ public class ForumStatisticsTestSuite {
         when(statisticsMock.postsCount()).thenReturn(postsCountStatistic);
 
         List<String> userNamesStatistics = new ArrayList<String>();
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             userNamesStatistics.add("A");
         }
         when(statisticsMock.usersNames()).thenReturn(userNamesStatistics);

@@ -32,13 +32,13 @@ public class SudokuBoard {
         return rowBoard;
     }
 
-    public String toString(){
+    public String toString() {
 
         String result = "";
-        for(int n = MIN_INDEX; n < MAX_INDEX; n++) {
+        for (int n = MIN_INDEX; n < MAX_INDEX; n++) {
             result += "|";
-            for(int k = MIN_INDEX; k < MAX_INDEX; k++) {
-                if(rowBoard.get(n).getRow().get(k).getValue() == -1 ) {
+            for (int k = MIN_INDEX; k < MAX_INDEX; k++) {
+                if (rowBoard.get(n).getRow().get(k).getValue() == -1) {
                     result += "_";
                 } else {
                     result += rowBoard.get(n).getRow().get(k).getValue();

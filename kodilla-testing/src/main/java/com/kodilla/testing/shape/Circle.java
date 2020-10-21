@@ -1,6 +1,6 @@
 package com.kodilla.testing.shape;
 
-class Circle implements Shape{
+class Circle implements Shape {
     String circle = "Circle";
     double radiuosOfCircle;
 
@@ -8,11 +8,11 @@ class Circle implements Shape{
         this.radiuosOfCircle = radiuosOfCircle;
     }
 
-    public String getShapeName(){
+    public String getShapeName() {
         return circle;
     }
 
-    public double getField(){
+    public double getField() {
         return 3.14 * radiuosOfCircle * radiuosOfCircle;
     }
 

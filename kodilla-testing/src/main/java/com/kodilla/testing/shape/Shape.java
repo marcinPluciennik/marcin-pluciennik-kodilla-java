@@ -4,5 +4,6 @@ import java.util.ArrayList;
 
 interface Shape {
     String getShapeName();
+
     double getField();
 }

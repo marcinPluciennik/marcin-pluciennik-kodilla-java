@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.flights;
 
 public class FlightSearch {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         FlightsData flightsData = new FlightsData();
 

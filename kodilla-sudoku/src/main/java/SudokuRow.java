@@ -5,8 +5,8 @@ public class SudokuRow {
 
     List<SudokuElement> row = new ArrayList<>();
 
-    public SudokuRow(){
-        for (int i = 0; i < 9; i++){
+    public SudokuRow() {
+        for (int i = 0; i < 9; i++) {
             row.add(new SudokuElement());
         }
     }

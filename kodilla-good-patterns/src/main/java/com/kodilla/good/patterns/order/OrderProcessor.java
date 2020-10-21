@@ -1,14 +1,14 @@
 package com.kodilla.good.patterns.order;
 
-public class OrderProcessor implements OrderProcess{
+public class OrderProcessor implements OrderProcess {
 
     private InformationService informationService;
     private OrderService orderService;
     private OrderRepository orderRepository;
 
     public OrderProcessor(final InformationService informationService,
-                           final OrderService orderService,
-                           final OrderRepository orderRepository) {
+                          final OrderService orderService,
+                          final OrderRepository orderRepository) {
         this.informationService = informationService;
         this.orderService = orderService;
         this.orderRepository = orderRepository;
@@ -18,7 +18,7 @@ public class OrderProcessor implements OrderProcess{
         boolean isOrdered = orderService.order(orderRequest.getUser(), orderRequest.getDateOfOrder(),
                 orderRequest.getDateOfShipping());
 
-        if(isOrdered) {
+        if (isOrdered) {
             informationService.inform(orderRequest.getUser());
             orderRepository.createOrder(orderRequest.getUser(), orderRequest.getDateOfOrder(), orderRequest.getDateOfShipping());
             return new OrderDto(orderRequest.getUser(), true);

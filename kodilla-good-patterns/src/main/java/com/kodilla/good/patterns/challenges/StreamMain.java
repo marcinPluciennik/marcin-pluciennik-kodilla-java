@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class StreamMain {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         MovieStore movieStore = new MovieStore();
 

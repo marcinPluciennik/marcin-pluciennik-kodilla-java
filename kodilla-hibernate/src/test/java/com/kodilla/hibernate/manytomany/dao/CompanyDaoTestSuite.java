@@ -21,7 +21,7 @@ public class CompanyDaoTestSuite {
 
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -67,7 +67,7 @@ public class CompanyDaoTestSuite {
     }
 
     @Test
-    public void testEmployeeWithLastName(){
+    public void testEmployeeWithLastName() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -94,7 +94,7 @@ public class CompanyDaoTestSuite {
     }
 
     @Test
-    public void testCompanyWithNameIncludedWord(){
+    public void testCompanyWithNameIncludedWord() {
         //Given
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");

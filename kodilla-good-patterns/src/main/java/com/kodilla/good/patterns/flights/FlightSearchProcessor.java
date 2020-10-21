@@ -7,7 +7,7 @@ public class FlightSearchProcessor {
 
     PrintLine printLine = new PrintLine();
 
-    public void searchingFlightsFrom(FlightsData flightsData, String city){
+    public void searchingFlightsFrom(FlightsData flightsData, String city) {
         printLine.printingLine();
         System.out.println("ALL FLIGHTS FROM THIS CITY:");
         printLine.printingLine();
@@ -17,7 +17,7 @@ public class FlightSearchProcessor {
                 .forEach(System.out::println);
     }
 
-    public void searchingFlightsTo(FlightsData flightsData, String city){
+    public void searchingFlightsTo(FlightsData flightsData, String city) {
         printLine.printingLine();
         System.out.println("ALL FLIGHTS TO THIS CITY:");
         printLine.printingLine();
@@ -27,7 +27,7 @@ public class FlightSearchProcessor {
                 .forEach(System.out::println);
     }
 
-    public void searchingConnectedFlights(FlightsData flightsData, String cityFrom, String cityTo){
+    public void searchingConnectedFlights(FlightsData flightsData, String cityFrom, String cityTo) {
         printLine.printingLine();
         System.out.println("ALL CONNECTED FLIGHTS:");
         printLine.printingLine();
@@ -45,12 +45,12 @@ public class FlightSearchProcessor {
         List<Flight> myFlightsFrom = flightsFrom.stream()
                 .filter(f ->
                         (flightsTo.stream()
-                        .map(Flight::getCityFrom)
-                        .collect(Collectors.toList()))
-                .contains(f.getCityTo()))
+                                .map(Flight::getCityFrom)
+                                .collect(Collectors.toList()))
+                                .contains(f.getCityTo()))
                 .collect(Collectors.toList());
 
-          myFlightsFrom.stream()
+        myFlightsFrom.stream()
                 .forEach(System.out::println);
 
         System.out.println("\nSelect one of the following flights as your second flight:");
@@ -60,9 +60,9 @@ public class FlightSearchProcessor {
         List<Flight> myFlightsTo = flightsTo.stream()
                 .filter(f ->
                         (flightsFrom.stream()
-                        .map(Flight::getCityTo)
-                        .collect(Collectors.toList()))
-                .contains((f.getCityFrom())))
+                                .map(Flight::getCityTo)
+                                .collect(Collectors.toList()))
+                                .contains((f.getCityFrom())))
                 .collect(Collectors.toList());
 
         myFlightsTo.stream()

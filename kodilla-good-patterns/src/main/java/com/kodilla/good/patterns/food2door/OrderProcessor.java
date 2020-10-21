@@ -7,7 +7,7 @@ public class OrderProcessor {
         this.shop = shop;
     }
 
-    public OrderDto ordering(){
+    public OrderDto ordering() {
         return shop.process();
     }
 }

@@ -12,7 +12,7 @@ public class LoggerTestSuite {
     }
 
     @Test
-    public void testGetLastLog(){
+    public void testGetLastLog() {
         //Given
         //When
         String lastLog = Logger.getInstance().getLastLog();

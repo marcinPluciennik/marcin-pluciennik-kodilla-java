@@ -1,6 +1,6 @@
 package com.kodilla.testing.shape;
 
-class Triangle implements Shape{
+class Triangle implements Shape {
     String triangle = "Rectangle";
     double a;
     double h;
@@ -10,11 +10,11 @@ class Triangle implements Shape{
         this.h = h;
     }
 
-    public String getShapeName(){
+    public String getShapeName() {
         return triangle;
     }
 
-    public double getField(){
+    public double getField() {
         return (a * h) / 2;
     }
 

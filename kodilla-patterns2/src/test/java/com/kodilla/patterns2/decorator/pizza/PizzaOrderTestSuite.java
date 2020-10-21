@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class PizzaOrderTestSuite {
 
     @Test
-    public void testPizzaWithDoubleCheeseOlivesTomatoesGetCost(){
+    public void testPizzaWithDoubleCheeseOlivesTomatoesGetCost() {
         //Given
         PizzaOrder thePizza = new BasicPizzaOrder();
         thePizza = new CheeseDecorator(thePizza);
@@ -26,7 +26,7 @@ public class PizzaOrderTestSuite {
     }
 
     @Test
-    public void testPizzaWithDoubleCheeseOlivesTomatoesGetDescription(){
+    public void testPizzaWithDoubleCheeseOlivesTomatoesGetDescription() {
         //Given
         PizzaOrder thePizza = new BasicPizzaOrder();
         thePizza = new CheeseDecorator(thePizza);
@@ -43,7 +43,7 @@ public class PizzaOrderTestSuite {
     }
 
     @Test
-    public void testPizzaWithCheeseHamGetCost(){
+    public void testPizzaWithCheeseHamGetCost() {
         //Given
         PizzaOrder thePizza = new BasicPizzaOrder();
         thePizza = new CheeseDecorator(thePizza);
@@ -58,7 +58,7 @@ public class PizzaOrderTestSuite {
     }
 
     @Test
-    public void testPizzaWithCheeseHamGetDescription(){
+    public void testPizzaWithCheeseHamGetDescription() {
         //Given
         PizzaOrder thePizza = new BasicPizzaOrder();
         thePizza = new CheeseDecorator(thePizza);

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TaxiOrderTestSuite {
     @Test
-    public void testBasicTaxiOrderGetCost(){
+    public void testBasicTaxiOrderGetCost() {
         //Given
         TaxiOrder theOrder = new BasicTaxiOrder();
 
@@ -20,7 +20,7 @@ public class TaxiOrderTestSuite {
     }
 
     @Test
-    public void testBasicTaxiOrderGetDescription(){
+    public void testBasicTaxiOrderGetDescription() {
         //Given
         TaxiOrder theOrder = new BasicTaxiOrder();
 
@@ -32,7 +32,7 @@ public class TaxiOrderTestSuite {
     }
 
     @Test
-    public void testTaxiNetworkGetCost(){
+    public void testTaxiNetworkGetCost() {
         //Given
         TaxiOrder theOrder = new BasicTaxiOrder();
         theOrder = new TaxiNetworkOrderDecorator(theOrder);
@@ -45,7 +45,7 @@ public class TaxiOrderTestSuite {
     }
 
     @Test
-    public void testTaxiNetworkGetDescription(){
+    public void testTaxiNetworkGetDescription() {
         //Given
         TaxiOrder theOrder = new BasicTaxiOrder();
         theOrder = new TaxiNetworkOrderDecorator(theOrder);
@@ -58,7 +58,7 @@ public class TaxiOrderTestSuite {
     }
 
     @Test
-    public void testMyTaxiWithChildSeatGetCost(){
+    public void testMyTaxiWithChildSeatGetCost() {
         //Given
         TaxiOrder theOrder = new BasicTaxiOrder();
         theOrder = new MyTaxiNetworkOrderDecorator(theOrder);
@@ -72,7 +72,7 @@ public class TaxiOrderTestSuite {
     }
 
     @Test
-    public void testMyTaxiWithChildSeatGetDescription(){
+    public void testMyTaxiWithChildSeatGetDescription() {
         //Given
         TaxiOrder theOrder = new BasicTaxiOrder();
         theOrder = new MyTaxiNetworkOrderDecorator(theOrder);
@@ -86,7 +86,7 @@ public class TaxiOrderTestSuite {
     }
 
     @Test
-    public void testUberWithTwoWithChildSeatGetCost(){
+    public void testUberWithTwoWithChildSeatGetCost() {
         //Given
         TaxiOrder theOrder = new BasicTaxiOrder();
         theOrder = new UberNetworkOrderDecorator(theOrder);
@@ -101,7 +101,7 @@ public class TaxiOrderTestSuite {
     }
 
     @Test
-    public void testUberWithTwoChildSeatGetDescription(){
+    public void testUberWithTwoChildSeatGetDescription() {
         //Given
         TaxiOrder theOrder = new BasicTaxiOrder();
         theOrder = new UberNetworkOrderDecorator(theOrder);
@@ -116,7 +116,7 @@ public class TaxiOrderTestSuite {
     }
 
     @Test
-    public void testVipTaxiWithChildSeatExpressGetCost(){
+    public void testVipTaxiWithChildSeatExpressGetCost() {
         //Given
         TaxiOrder theOrder = new BasicTaxiOrder();
         theOrder = new TaxiNetworkOrderDecorator(theOrder);
@@ -132,7 +132,7 @@ public class TaxiOrderTestSuite {
     }
 
     @Test
-    public void testVipTaxiWithChildSeatExpressGetDescription(){
+    public void testVipTaxiWithChildSeatExpressGetDescription() {
         //Given
         TaxiOrder theOrder = new BasicTaxiOrder();
         theOrder = new TaxiNetworkOrderDecorator(theOrder);

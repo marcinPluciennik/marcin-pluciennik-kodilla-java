@@ -8,17 +8,17 @@ import java.util.ArrayList;
 public class CollectionTestSuite {
 
     @Before
-    public void before(){
+    public void before() {
         System.out.println("Test case: begin");
     }
 
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test case: end");
     }
 
     @Test
-    public void testOddNumbersExterminatorEmptyList(){
+    public void testOddNumbersExterminatorEmptyList() {
         //Given
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         //When
@@ -29,10 +29,10 @@ public class CollectionTestSuite {
     }
 
     @Test
-    public void testOddNumbersExterminatorNormalList(){
+    public void testOddNumbersExterminatorNormalList() {
         //Given
         ArrayList<Integer> numbers = new ArrayList<Integer>();
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             numbers.add(i);
         }
         ArrayList<Integer> evenList = new ArrayList<Integer>();

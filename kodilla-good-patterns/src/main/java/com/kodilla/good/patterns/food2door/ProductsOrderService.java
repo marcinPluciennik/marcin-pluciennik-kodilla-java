@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.food2door;
 
 public class ProductsOrderService {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         OrderProcessor orderProcessorExtra = new OrderProcessor(new ExtraFoodShopProcess());
         orderProcessorExtra.ordering();

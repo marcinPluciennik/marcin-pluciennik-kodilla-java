@@ -7,7 +7,7 @@ public class User {
     private int quantityOfRounds; // How many rounds user want to play
 
     //This method ask user about name and how many rounds user want to play
-    public void startGame(){
+    public void startGame() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your name: ");
         userName = scanner.nextLine();

@@ -6,10 +6,10 @@ public class FirstChallenge {
 
     public double divide(double a, double b) throws ArithmeticException {
         try {
-            if ( b == 0){
+            if (b == 0) {
                 throw new ArithmeticException();
             }
-            return a / (int)b;
+            return a / (int) b;
         } catch (ArithmeticException ae) {
             System.out.println("I can not divide by zero! Error: " + ae);
             return 0;
@@ -20,6 +20,7 @@ public class FirstChallenge {
 
     /**
      * This main can throw an ArithmeticException!!!
+     *
      * @param args
      */
     public static void main(String[] args) {

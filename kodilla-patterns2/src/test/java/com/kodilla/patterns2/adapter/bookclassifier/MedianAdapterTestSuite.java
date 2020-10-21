@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class MedianAdapterTestSuite {
 
     @Test
-    public void publicationYearMedianTest(){
+    public void publicationYearMedianTest() {
         //Given
         MedianAdapter medianAdapter = new MedianAdapter();
 

@@ -1,15 +1,15 @@
 package com.kodilla.exception.test;
 
 public class ThirdChallenge {
-    public static void main (String[] args){
+    public static void main(String[] args) {
 
         Flight flight = new Flight("KRK", "LON");
 
         Flightfinder flightfinder = new Flightfinder();
 
-        try{
+        try {
             flightfinder.findFlight(flight);
-        } catch (RouteNotFoundException e){
+        } catch (RouteNotFoundException e) {
             System.out.println("********************************************");
             System.out.println("Your destination is not on our list, sorry.");
         }

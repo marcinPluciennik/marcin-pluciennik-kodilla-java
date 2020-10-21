@@ -19,7 +19,7 @@ public class BookLibrary {
         return bookList;
     }
 
-    public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
         List<Book> bookList = new ArrayList<Book>();
         String firstName = libraryUser.getFirstname();
         String lastName = libraryUser.getLastname();
@@ -28,13 +28,13 @@ public class BookLibrary {
 
         if (firstName.equals("Jan") && lastName.equals("Kowalski") && peselID.equals("1234")) {
             return bookList;
-        }else if (firstName.equals("Myszka") && lastName.equals("Miki") && peselID.equals("5678")){
-            bookList  = resultList;
+        } else if (firstName.equals("Myszka") && lastName.equals("Miki") && peselID.equals("5678")) {
+            bookList = resultList;
             return bookList;
-        }else if (firstName.equals("Adam") && lastName.equals("Adamowicz") && peselID.equals("0000")){
-            bookList  = resultList;
+        } else if (firstName.equals("Adam") && lastName.equals("Adamowicz") && peselID.equals("0000")) {
+            bookList = resultList;
             return bookList;
-        }else{
+        } else {
             return bookList;
         }
     }

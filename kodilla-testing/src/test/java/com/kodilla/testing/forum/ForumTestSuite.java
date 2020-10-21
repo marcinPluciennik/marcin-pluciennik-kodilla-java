@@ -5,27 +5,27 @@ import org.junit.*;
 
 public class ForumTestSuite {
     @Before
-    public void before(){
+    public void before() {
         System.out.println("Test case: begin");
     }
 
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test case: end");
     }
 
     @BeforeClass
-    public static void beforeClass(){
+    public static void beforeClass() {
         System.out.println("Test suit: begin");
     }
 
     @AfterClass
-    public static void afterClass(){
+    public static void afterClass() {
         System.out.println("Test suit: end");
     }
 
     @Test
-    public void testCaseUsername(){
+    public void testCaseUsername() {
         //Given
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
         //When
@@ -36,7 +36,7 @@ public class ForumTestSuite {
     }
 
     @Test
-    public void testCaseRealName(){
+    public void testCaseRealName() {
         //Given
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
         //When

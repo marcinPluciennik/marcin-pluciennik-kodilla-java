@@ -6,7 +6,7 @@ import org.junit.Test;
 public class UserTestSuite {
 
     @Test
-    public void testDefaultSharingStrategies(){
+    public void testDefaultSharingStrategies() {
         //Given
         User duda = new Millenials("Andrzej Duda");
         User trzaskowski = new YGeneration("Rafal Trzaskowski");
@@ -27,7 +27,7 @@ public class UserTestSuite {
     }
 
     @Test
-    public void testIndividualSharingStrategy(){
+    public void testIndividualSharingStrategy() {
         //Given
         User trump = new Millenials("Donald Trump");
 

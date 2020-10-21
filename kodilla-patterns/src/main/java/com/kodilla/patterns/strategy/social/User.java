@@ -10,11 +10,11 @@ public class User {
         this.name = name;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public String sharePost(){
+    public String sharePost() {
         return socialPublisher.share();
     }
 

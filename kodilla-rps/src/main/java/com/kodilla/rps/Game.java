@@ -16,7 +16,7 @@ public class Game {
     private List<String> listOfPossibilities; //From this list computer make random choice
 
     //This method create new game
-    public void startGame(){
+    public void startGame() {
 
         Intro intro = new Intro();
         intro.intro();
@@ -29,15 +29,15 @@ public class Game {
 
         Game game = new Game();
 
-        if (intro.getUserLevelChoice().equals("B")){
-            for (int i=0; i < user.getQuantityOfRounds(); i++) {
+        if (intro.getUserLevelChoice().equals("B")) {
+            for (int i = 0; i < user.getQuantityOfRounds(); i++) {
                 game.usersChoice();
                 game.computerChoice();
                 game.whoIsTheWinnerOfRound();
 
             }
-        }else if (intro.getUserLevelChoice().equals("E")){
-            for (int j=0; j < user.getQuantityOfRounds(); j++) {
+        } else if (intro.getUserLevelChoice().equals("E")) {
+            for (int j = 0; j < user.getQuantityOfRounds(); j++) {
                 game.usersChoice();
                 game.computerChoiceExpert();
                 game.whoIsTheWinnerOfRound();
@@ -49,7 +49,7 @@ public class Game {
     }
 
     //This method create user's choice of play, quit game, restart game
-    public void usersChoice(){
+    public void usersChoice() {
         System.out.println("******************** ROUND " + roundsCounter + " *********************");
         Scanner scanner = new Scanner(System.in);
         System.out.println("So... 1 - ROCK, 2 - PAPER, 3 - SCISSORS, x or n?");
@@ -57,45 +57,45 @@ public class Game {
         System.out.println("--------------------------------------------------");
 
         boolean end = false;
-        while (!end){
-            if (userInput.equals("1")){
+        while (!end) {
+            if (userInput.equals("1")) {
                 System.out.println("Your choice: ROCK");
                 usersChoice = "ROCK";
                 end = true;
-            }else if (userInput.equals("2")){
+            } else if (userInput.equals("2")) {
                 System.out.println("Your choice: PAPER");
                 usersChoice = "PAPER";
                 end = true;
-            }else if (userInput.equals("3")){
+            } else if (userInput.equals("3")) {
                 System.out.println("Your choice: SCISSORS");
                 usersChoice = "SCISSORS";
                 end = true;
-            }else if (userInput.equals("X")){
+            } else if (userInput.equals("X")) {
                 System.out.println("Quit the game? (y/n): ");
                 String quitOrPlay = scanner.nextLine().toUpperCase();
-                if (quitOrPlay.equals("Y")){
+                if (quitOrPlay.equals("Y")) {
                     System.out.println("**************************************************");
                     System.out.println("******************* GAME OVER ********************");
                     System.out.println("**************************************************");
                     System.exit(0);
-                }else if (quitOrPlay.equals("N")){
+                } else if (quitOrPlay.equals("N")) {
                     usersChoice();
-                }else{
+                } else {
                     System.out.println("Wrong key, try again!");
                 }
-            }else if (userInput.equals("N")){
+            } else if (userInput.equals("N")) {
                 System.out.println("Are you sure to restart game? (y/n)");
                 String askNewGame = scanner.nextLine().toUpperCase();
-                if (askNewGame.equals("Y")){
+                if (askNewGame.equals("Y")) {
                     System.out.println("I'm restarting game");
                     System.out.println("--------------------------------------------------");
                     startGame();
-                }else if (askNewGame.equals("N")){
+                } else if (askNewGame.equals("N")) {
                     usersChoice();
-                }else{
+                } else {
                     System.out.println("Wrong key, try again!");
                 }
-            }else{
+            } else {
                 System.out.println("Error! Wrong key! Try again!");
                 usersChoice();
             }
@@ -104,7 +104,7 @@ public class Game {
     }
 
     //This method create computer random choice from list: rock, paper or scissors in (Beginner level)
-    public String computerChoice(){
+    public String computerChoice() {
         List<String> listOfPossibilitiesBeginner = new ArrayList<>();
         listOfPossibilitiesBeginner.add("ROCK");
         listOfPossibilitiesBeginner.add("PAPER");
@@ -121,22 +121,22 @@ public class Game {
     }
 
     //This method create computer random choice from list: rock, paper or scissors (Expert(not fair) level)
-    public String computerChoiceExpert(){
+    public String computerChoiceExpert() {
         List<String> listOfPossibilitiesBeginner = new ArrayList<>();
         listOfPossibilitiesBeginner.add("ROCK");
         listOfPossibilitiesBeginner.add("PAPER");
         listOfPossibilitiesBeginner.add("SCISSORS");
         listOfPossibilities = listOfPossibilitiesBeginner;
 
-        if (userInput.equals("1")){
+        if (userInput.equals("1")) {
             listOfPossibilities.add("ROCK");
             listOfPossibilities.add("PAPER");
             listOfPossibilities.add("PAPER");
-        }else if (userInput.equals("2")){
+        } else if (userInput.equals("2")) {
             listOfPossibilities.add("PAPER");
             listOfPossibilities.add("SCISSORS");
             listOfPossibilities.add("SCISSORS");
-        }else if (userInput.equals("3")){
+        } else if (userInput.equals("3")) {
             listOfPossibilities.add("SCISSORS");
             listOfPossibilities.add("ROCK");
             listOfPossibilities.add("ROCK");
@@ -152,26 +152,26 @@ public class Game {
     }
 
     //This method checks who is the winner: user or computer
-    public void whoIsTheWinnerOfRound(){
-        if (usersChoice.equals("ROCK") && computersChoice.equals("PAPER")){
+    public void whoIsTheWinnerOfRound() {
+        if (usersChoice.equals("ROCK") && computersChoice.equals("PAPER")) {
             computerWinnerRounds++;
             System.out.println("Computer wins!");
-        }else if (usersChoice.equals("ROCK") && computersChoice.equals("SCISSORS")){
+        } else if (usersChoice.equals("ROCK") && computersChoice.equals("SCISSORS")) {
             userWinnerRounds++;
             System.out.println("You win!");
-        }else if (usersChoice.equals("PAPER") && computersChoice.equals("SCISSORS")){
+        } else if (usersChoice.equals("PAPER") && computersChoice.equals("SCISSORS")) {
             computerWinnerRounds++;
             System.out.println("Computer wins!");
-        }else if (usersChoice.equals("PAPER") && computersChoice.equals("ROCK")){
+        } else if (usersChoice.equals("PAPER") && computersChoice.equals("ROCK")) {
             userWinnerRounds++;
             System.out.println("You win!");
-        }else if (usersChoice.equals("SCISSORS") && computersChoice.equals("PAPER")){
+        } else if (usersChoice.equals("SCISSORS") && computersChoice.equals("PAPER")) {
             userWinnerRounds++;
             System.out.println("You win!");
-        }else if (usersChoice.equals("SCISSORS") && computersChoice.equals("ROCK")){
+        } else if (usersChoice.equals("SCISSORS") && computersChoice.equals("ROCK")) {
             computerWinnerRounds++;
             System.out.println("Computer wins!");
-        }else{
+        } else {
             tieCounter++;
             System.out.println("Tie!");
         }
@@ -180,22 +180,22 @@ public class Game {
     }
 
     //This method display statistics and the winner
-    public void winner(String userName){
+    public void winner(String userName) {
         System.out.println("**************************************************");
 
-        if (userWinnerRounds > computerWinnerRounds){
+        if (userWinnerRounds > computerWinnerRounds) {
             System.out.println(userName.toUpperCase() + " won " + userWinnerRounds + " times");
             System.out.println("Computer won " + computerWinnerRounds + " times");
             System.out.println("Tie was " + tieCounter + " times");
             System.out.println("**************************************************");
             System.out.println(userName.toUpperCase() + " IS THE WINNER!");
-        }else if (userWinnerRounds < computerWinnerRounds){
+        } else if (userWinnerRounds < computerWinnerRounds) {
             System.out.println(userName.toUpperCase() + " won " + userWinnerRounds + " times");
             System.out.println("Computer won " + computerWinnerRounds + " times");
             System.out.println("Tie was " + tieCounter + " times");
             System.out.println("**************************************************");
             System.out.println("COMPUTER IS THE WINNER!");
-        }else{
+        } else {
             System.out.println(userName.toUpperCase() + " won " + userWinnerRounds + " times");
             System.out.println("Computer won " + computerWinnerRounds + " times");
             System.out.println("Tie was " + tieCounter + " times");
@@ -205,7 +205,7 @@ public class Game {
     }
 
     //This method ask user to play again or quite game
-    public void playAgain(){
+    public void playAgain() {
         System.out.println("**************************************************");
         System.out.println("Start new game? (y/n)");
 

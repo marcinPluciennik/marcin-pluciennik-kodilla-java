@@ -6,7 +6,7 @@ import java.util.List;
 public class TaskList {
     List<String> tasks;
 
-    public TaskList(){
+    public TaskList() {
         tasks = new ArrayList<>();
     }
 
@@ -15,7 +15,7 @@ public class TaskList {
         return task;
     }
 
-    public void addTaskToList(String task){
+    public void addTaskToList(String task) {
         tasks.add(task);
     }
 }

@@ -12,18 +12,18 @@ public class UserInput {
 
 
         while (true) {
-            System.out.print("Enter X (1-9):");
+            System.out.print("Enter number of the row (1-9):");
             String inputString = s.nextLine().toUpperCase();
 
-            if (inputString.equals(SUDOKU)){
+            if (inputString.equals(SUDOKU)) {
                 gameOver = "SUDOKU";
                 x = 0;
                 return x;
-            }else{
+            } else {
                 try {
                     int inputX = Integer.parseInt(inputString);
                     if (inputX < 1 || inputX > 9) {
-                        System.out.println("X must be 1-9! Try again");
+                        System.out.println("Number of the row must be 1-9! Try again");
                     } else {
                         x = inputX;
                         return x;
@@ -35,22 +35,22 @@ public class UserInput {
         }
     }
 
-    public int loadUserInputY () {
+    public int loadUserInputY() {
         Scanner s = new Scanner(System.in);
 
         while (true) {
-            System.out.print("Enter Y (1-9):");
+            System.out.print("Enter number of the column (1-9):");
             String inputString = s.nextLine().toUpperCase();
 
-            if (inputString.equals(SUDOKU)){
+            if (inputString.equals(SUDOKU)) {
                 gameOver = SUDOKU;
                 y = 0;
                 return y;
-            }else{
+            } else {
                 try {
                     int inputY = Integer.parseInt(inputString);
                     if (inputY < 1 || inputY > 9) {
-                        System.out.println("Y must be 1-9! Try again");
+                        System.out.println("Number of the column must be 1-9! Try again");
                     } else {
                         y = inputY;
                         return y;
@@ -62,7 +62,7 @@ public class UserInput {
         }
     }
 
-    public int loadUserInputValue () {
+    public int loadUserInputValue() {
         Scanner s = new Scanner(System.in);
 
         while (true) {
@@ -89,22 +89,23 @@ public class UserInput {
         }
     }
 
-    public int getX () {
+    public int getX() {
         return x;
     }
 
-    public int getY () {
+    public int getY() {
         return y;
     }
 
-    public int getValue () {
+    public int getValue() {
         return value;
     }
 
-    public String getGameOver () {
+    public String getGameOver() {
         return gameOver;
     }
-    public String getSUDOKU () {
+
+    public String getSUDOKU() {
         return SUDOKU;
     }
 

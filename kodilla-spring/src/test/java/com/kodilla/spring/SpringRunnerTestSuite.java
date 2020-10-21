@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SpringRunnerTestSuite {
 
     @Test
-    public void testGetUsername(){
+    public void testGetUsername() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         ForumUser forumUser = new ForumUser();
@@ -33,7 +33,7 @@ public class SpringRunnerTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("createSquare");
+        Shape shape = (Shape) context.getBean("createSquare");
         //When
         String name = shape.getShapeName();
         //Then
@@ -46,7 +46,7 @@ public class SpringRunnerTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("circle");
+        Shape shape = (Shape) context.getBean("circle");
         //When
         String name = shape.getShapeName();
         //Then
@@ -58,7 +58,7 @@ public class SpringRunnerTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("triangle");
+        Shape shape = (Shape) context.getBean("triangle");
         //When
         String name = shape.getShapeName();
         //Then
@@ -70,7 +70,7 @@ public class SpringRunnerTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("chosenShape");
+        Shape shape = (Shape) context.getBean("chosenShape");
         //When
         String name = shape.getShapeName();
         //Then

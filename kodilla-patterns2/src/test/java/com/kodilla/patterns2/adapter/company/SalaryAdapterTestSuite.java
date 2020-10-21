@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class SalaryAdapterTestSuite {
 
     @Test
-    public void testTotalSalary(){
+    public void testTotalSalary() {
         //Given
         Workers workers = new Workers();
         SalaryAdapter salaryAdapter = new SalaryAdapter();
@@ -20,6 +20,6 @@ public class SalaryAdapterTestSuite {
 
         //Than
         System.out.println(totalSalary);
-        assertEquals(totalSalary,27750, 0);
+        assertEquals(totalSalary, 27750, 0);
     }
 }

@@ -23,7 +23,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void testAddFigure(){
+    public void testAddFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape shape = new Circle(10.0);
@@ -34,7 +34,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void testRemoveFigure(){
+    public void testRemoveFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape shape = new Circle(10.0);
@@ -45,7 +45,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void testGetFigure(){
+    public void testGetFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape shape = new Circle(10.0);

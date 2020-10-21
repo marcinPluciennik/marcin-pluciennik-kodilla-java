@@ -3,11 +3,11 @@ package com.kodilla.testing.collection;
 import java.util.ArrayList;
 
 public class OddNumbersExterminator {
-    public ArrayList<Integer> exterminate(ArrayList<Integer> numbers){
+    public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
         //check if list is empty
-        if (numbers.isEmpty()){
+        if (numbers.isEmpty()) {
             return numbers;
-        }else {
+        } else {
             //Create ArrayList with even numbers
             ArrayList<Integer> evenNumbers = new ArrayList<Integer>();
             for (int j = 0; j < numbers.size(); j++) {

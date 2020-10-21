@@ -24,7 +24,7 @@ public class FindingFacadeTestSuit {
     private CompanyDao companyDao;
 
     @Test
-    public void testFindingCompaniesFacade(){
+    public void testFindingCompaniesFacade() {
         //Given
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");
@@ -50,7 +50,7 @@ public class FindingFacadeTestSuit {
     }
 
     @Test
-    public void testFindingEmployeesFacade(){
+    public void testFindingEmployeesFacade() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");

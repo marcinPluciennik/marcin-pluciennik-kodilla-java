@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FlightsData {
 
-    public List<Flight> getListOfFlights(){
+    public List<Flight> getListOfFlights() {
 
         Flight flight1 = new Flight("GDANSK", "WROCLAW", "10:00");
         Flight flight2 = new Flight("WROCLAW", "CRACOW", "11:00");

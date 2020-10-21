@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class HomeworkTestSuite {
 
     @Test
-    public void testUpdate(){
+    public void testUpdate() {
         //Given
         Homework homeworkDonaldTrump = new HomeworkDonaldTrump();
         Homework homeworkWladimirPutin = new HomeworkWladimirPutin();

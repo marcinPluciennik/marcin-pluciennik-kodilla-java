@@ -17,11 +17,11 @@ public class Workers {
             6200.00
     };
 
-    public String getWorker(int n){
-        if (n > salaries.length){
+    public String getWorker(int n) {
+        if (n > salaries.length) {
             return "";
         }
-        return workers [n][0] + ", " + workers [n][1] + ", " + workers [n][2] + ", " + salaries[n];
+        return workers[n][0] + ", " + workers[n][1] + ", " + workers[n][2] + ", " + salaries[n];
     }
 
     public String[][] getWorkers() {
